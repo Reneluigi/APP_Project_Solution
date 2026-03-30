@@ -1,13 +1,14 @@
 # Sync local changes to Git remote (add, commit if needed, push).
-# Usage:
-#   .\git-sync.ps1
-#   .\git-sync.ps1 "Your commit message"
+# Usage (from repo root or this folder):
+#   .\scripts\git-sync.ps1
+#   .\scripts\git-sync.ps1 "Your commit message"
 
 $ErrorActionPreference = "Stop"
-Set-Location $PSScriptRoot
+$projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+Set-Location $projectRoot
 
 if (-not (Test-Path -Path ".git" -PathType Container)) {
-    Write-Error "Not a git repository. Run this script from the project root."
+    Write-Error "Not a git repository. Expected .git in $projectRoot"
     exit 1
 }
 

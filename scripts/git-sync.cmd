@@ -1,6 +1,5 @@
 @echo off
 setlocal
-cd /d "%~dp0"
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0git-sync.ps1" %*
 set EXITCODE=%ERRORLEVEL%
 if not "%EXITCODE%"=="0" (
