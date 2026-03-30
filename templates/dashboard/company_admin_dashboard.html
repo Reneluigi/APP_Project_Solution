@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Company admin · App{% endblock %}
+{% block content %}
+  <h1 class="h3 mb-3">Company admin dashboard</h1>
+  <p class="lead">{{ company.name }} <span class="text-muted small">({{ company.code }})</span></p>
+  <p class="text-muted">You can manage users and data for this company only.</p>
+{% endblock %}

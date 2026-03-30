@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Application · App{% endblock %}
+{% block content %}
+  <h1 class="h3 mb-3">Application</h1>
+  <p class="text-muted mb-0">Signed in as {{ request.user.username }} at {{ company.name }}.</p>
+{% endblock %}
